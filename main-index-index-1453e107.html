@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息索引 | 1xbet 使用指南与资料整理</title>
+    <style>
+        /* 基线重置 */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f0f2f5;
+            color: #1e2a3a;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .page {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        /* 主导航/页眉 */
+        .site-header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+        .site-header h1 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            color: #1a2634;
+            margin-bottom: 0.35rem;
+        }
+        .site-header .sub {
+            font-size: 0.95rem;
+            color: #5f6b7a;
+            border-bottom: 1px solid #d0d6dd;
+            padding-bottom: 0.6rem;
+            display: inline-block;
+        }
+
+        /* 分区卡片 */
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+            border: 1px solid #e5e9ef;
+            padding: 1.8rem 2rem 2rem;
+            margin-bottom: 1.8rem;
+            transition: box-shadow 0.15s;
+        }
+        .card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        /* 文章标题层 */
+        .article-title {
+            font-size: 1.6rem;
+            font-weight: 450;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            color: #141c28;
+        }
+        .article-lead {
+            font-size: 1.05rem;
+            color: #3e4b5c;
+            border-left: 4px solid #b8c4d0;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            font-style: normal;
+        }
+
+        /* 正文 */
+        .body-text p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+        .body-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 引用提示块 */
+        .quote-tip {
+            background: #f6f8fa;
+            border-left: 4px solid #8896a8;
+            padding: 1rem 1.4rem;
+            margin: 1.6rem 0 1.2rem;
+            border-radius: 0 10px 10px 0;
+            color: #2a384a;
+            font-size: 0.98rem;
+        }
+        .quote-tip strong {
+            color: #1d2b3b;
+        }
+
+        /* 访问句（内嵌链接） */
+        .access-line {
+            background: #eef2f6;
+            padding: 1rem 1.4rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            margin: 1.5rem 0 0.6rem;
+            border: 1px solid #d9e0e8;
+        }
+        .access-line a {
+            color: #1f4e7a;
+            text-decoration: none;
+            font-weight: 450;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.1s;
+        }
+        .access-line a:hover {
+            border-bottom-color: #1f4e7a;
+        }
+
+        /* 列表 (用于场景 / 特点) */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.2rem 0 0.4rem;
+        }
+        .feature-list li {
+            position: relative;
+            padding-left: 1.4rem;
+            margin-bottom: 0.55rem;
+            color: #2e3b4b;
+        }
+        .feature-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #6b7a8c;
+            font-weight: 700;
+        }
+
+        /* FAQ 摘要简洁样式 */
+        .faq-item {
+            padding: 0.75rem 0 0.65rem;
+            border-bottom: 1px dashed #d7dee6;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-item .q {
+            font-weight: 500;
+            color: #14212e;
+            margin-bottom: 0.1rem;
+        }
+        .faq-item .a {
+            color: #435166;
+            font-size: 0.95rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #d5dce4;
+            margin: 1.8rem 0 1.2rem;
+        }
+
+        /* 小响应 */
+        @media (max-width: 540px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+            .site-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 页眉 -->
+    <header class="site-header">
+        <h1>资料整理·索引</h1>
+        <span class="sub">基于日常使用与信息归档</span>
+    </header>
+
+    <!-- 主文章卡片 博客式 -->
+    <article class="card">
+        <h2 class="article-title">从信息整理角度理解 1xbet 的日常使用</h2>
+        <div class="article-lead">
+            不是评测，也不是推广。只是把零散的使用感受、功能观察和常见疑问归拢到一起。<br>
+            方便自己回看，也方便路过的朋友少走一点弯路。
+        </div>
+
+        <div class="body-text">
+            <p>大概两年前，因为要找一些体育数据相关的资料，开始接触 <a href="https://main-index-1xbet.com" style="color:#1f4e7a;text-decoration:underline;">1xbet</a> 这个平台。一开始只是把它当作一个信息聚合的渠道——赛事列表、实时赔率、不同联赛的变动情况，某种程度上有点像体育迷的“数据库”。后来用得多了，发现它背后还有不少可以单独拎出来讲的功能模块。</p>
+
+            <p>单从资料整理的角度看，它的界面布局其实挺有层次感：左侧是体育项目分类，中间是赛事流，右侧会展示相关的统计或连串信息。对于我这种习惯把信息按“大类—子类—具体事件”归档的人，这种结构几乎不用适应。不过也遇到过一些细节，比如语言切换后部分模块的位置会有轻微变化，需要重新熟悉一下肌肉记忆。</p>
+
+            <div class="quote-tip">
+                <strong>一点个人感受：</strong> 信息类的工具，最怕的就是“什么都有但什么都找不到”。至少目前用来，它的检索逻辑还算顺——直接搜联赛或者队伍名称，结果不会太杂。当然，不同网络环境下加载速度会有差别，建议在稳定的连接下使用。
+            </div>
+
+            <p>另外，它的“收藏”或“关注”功能对我这种资料整理癖比较友好。可以把常看的几个联赛或特定队伍钉在首页，不用每次重新翻菜单。如果你也喜欢把常用入口集中起来，这个功能可以省下不少时间。</p>
+        </div>
+    </article>
+
+    <!-- 卡片：场景与特点  -->
+    <div class="card">
+        <h3 style="font-weight:450; font-size:1.25rem; margin-bottom:0.3rem;">适用场景与特征</h3>
+        <ul class="feature-list">
+            <li>日常浏览赛事信息、查看实时变动数据</li>
+            <li>集中关注特定联赛或队伍，减少重复搜索</li>
+            <li>多语言界面，适合需要切换语种查阅资料的用户</li>
+            <li>移动端与桌面端布局略有差异，但核心信息流一致</li>
+        </ul>
+        <p style="margin-top:0.8rem; color:#3b4b5e; font-size:0.95rem;">
+            以上几点是基于个人使用下来的感受，不一定覆盖所有功能，但至少是经常用到的部分。
+        </p>
+    </div>
+
+    <!-- 卡片：FAQ 摘要 + 访问句 -->
+    <div class="card">
+        <h3 style="font-weight:450; font-size:1.25rem; margin-bottom:0.2rem;">常见疑问摘要</h3>
+        <p style="font-size:0.9rem; color:#586c81; margin-bottom:0.2rem;">从平时收集的反馈里选了几条</p>
+
+        <div class="faq-item">
+            <div class="q">Q：是否必须注册才能浏览基本信息？</div>
+            <div class="a">A：大部分赛事列表和赔率变动可以在未登录状态下直接查看，但部分功能（比如收藏、历史记录）需要账号。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">Q：页面语言可以一直固定吗？</div>
+            <div class="a">A：可以手动选择并保存偏好，但清除浏览器缓存后可能需要重新设置，建议养成手动确认的习惯。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">Q：信息更新频率如何？</div>
+            <div class="a">A：主流赛事的变动基本是实时/准实时，小众联赛可能会有几秒到十几秒的延迟。从资料索引的角度来说够用。</div>
+        </div>
+
+        <hr>
+
+        <!-- 访问句，嵌入链接 -->
+        <div class="access-line">
+            如果想自己摸索或核对上述信息，可以直接访问 <a href="https://main-index-1xbet.com">1xbet</a> 的主页，界面上的分类和搜索栏都能帮助你快速定位到想看的板块。建议第一次去的时候先逛逛“帮助”或“常见问题”区域，里面有官方的操作说明。
+        </div>
+    </div>
+
+    <!-- 小尾巴 -->
+    <footer style="text-align:center; font-size:0.85rem; color:#697a8c; padding:1.2rem 0 0.5rem; border-top:1px solid #dce2ea; margin-top:1.2rem;">
+        本页为个人资料整理 · 信息索引 · 不构成任何建议
+    </footer>
+
+</div>
+</body>
+</html>
