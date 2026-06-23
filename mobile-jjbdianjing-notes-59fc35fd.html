@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>竞技宝 · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+      background-color: #f8f5f0;
+      color: #2d2a24;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      background-color: #fdfcfa;
+      padding: 2.8rem 2rem;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    }
+    @media (max-width: 520px) {
+      body { padding: 1rem 0.8rem; }
+      .page { padding: 1.8rem 1.2rem; border-radius: 12px; }
+    }
+
+    /* 开场短句 — 像一段旁白 */
+    .opening {
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      line-height: 1.5;
+      color: #3b352e;
+      margin-bottom: 1rem;
+      border-left: 4px solid #b7a48b;
+      padding-left: 1.2rem;
+    }
+    .opening em {
+      font-style: italic;
+      color: #7f6b56;
+    }
+
+    /* 承接段落 */
+    .lead {
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
+      color: #3f3a32;
+    }
+    .lead a {
+      color: #6b5b48;
+      text-decoration: none;
+      border-bottom: 1px dashed #b7a48b;
+      transition: border 0.2s;
+    }
+    .lead a:hover {
+      border-bottom: 1px solid #6b5b48;
+    }
+
+    /* 引用块 / 提醒框 */
+    .pull-quote {
+      background-color: #f4efe9;
+      padding: 1.5rem 1.8rem;
+      margin: 2rem 0 1.8rem 0;
+      border-radius: 20px;
+      border-left: 6px solid #b2957a;
+      font-style: normal;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.02);
+    }
+    .pull-quote p {
+      margin-bottom: 0.4rem;
+    }
+    .pull-quote .small-note {
+      font-size: 0.9rem;
+      color: #6a5f52;
+      margin-top: 0.5rem;
+      border-top: 1px solid #d8cfc4;
+      padding-top: 0.6rem;
+    }
+
+    /* 特点列表 — 小卡片式，但保持文章感 */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 2rem 0 1.5rem;
+    }
+    .feature-item {
+      flex: 1 1 200px;
+      background: #ffffff;
+      border: 1px solid #ece6dd;
+      border-radius: 20px;
+      padding: 1.2rem 1.2rem 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .feature-item h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+      color: #4a4036;
+      letter-spacing: 0.01em;
+    }
+    .feature-item h3::before {
+      content: "·";
+      color: #b2957a;
+      margin-right: 0.4rem;
+    }
+    .feature-item p {
+      font-size: 0.95rem;
+      color: #5c5348;
+      margin-top: 0.2rem;
+    }
+
+    /* 温和结尾 — 像一段寄语 */
+    .closing {
+      margin-top: 2.4rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid #e3dbd1;
+      font-size: 0.98rem;
+      color: #545048;
+      line-height: 1.6;
+    }
+    .closing a {
+      color: #6b5b48;
+      text-decoration: none;
+      border-bottom: 1px solid #cfc3b6;
+    }
+    .closing a:hover {
+      border-bottom: 1px solid #6b5b48;
+    }
+
+    /* 简单FAQ摘要 */
+    .faq-mini {
+      margin: 1.8rem 0 0.8rem;
+    }
+    .faq-mini details {
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #eee7df;
+      padding-bottom: 0.3rem;
+    }
+    .faq-mini summary {
+      cursor: pointer;
+      font-weight: 500;
+      color: #3f3a32;
+      padding: 0.3rem 0;
+      font-size: 0.98rem;
+      list-style: none;
+    }
+    .faq-mini summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-mini summary::before {
+      content: "▸ ";
+      color: #b2957a;
+    }
+    .faq-mini details[open] summary::before {
+      content: "▾ ";
+    }
+    .faq-mini details p {
+      margin: 0.3rem 0 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      color: #5a5247;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e7dfd6;
+      margin: 1.5rem 0;
+    }
+
+    /* 极弱装饰 */
+    .small-meta {
+      font-size: 0.82rem;
+      color: #a39688;
+      text-align: right;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 开场短句 -->
+  <div class="opening">
+    有时候，一个简洁的指引就够了。<br>
+    关于<em>竞技宝</em>，你只需要知道这几件事。
+  </div>
+
+  <!-- 承接段落：从简明指南和访问提醒展开 -->
+  <div class="lead">
+    如果你正在寻找一个稳定的访问路径，<a href="https://mobile-jjbdianjing.com">竞技宝</a>是很多用户习惯使用的地址。
+    不需要繁杂的教程，只需要记住几个关键点，就能顺畅地使用。下面这份简要指南，为你省去摸索的时间。
+  </div>
+
+  <!-- 提醒框 / 引用块 -->
+  <div class="pull-quote">
+    <p>🔹 访问时留意网络环境，保持浏览器为最新版本。<br>
+    🔹 建议将页面添加到书签，避免从非可靠渠道跳转。</p>
+    <div class="small-note">—— 这些提醒来自长期使用者的经验，简单但管用。</div>
+  </div>
+
+  <!-- 特点列表 (三个核心特点，从“简明指南”角度) -->
+  <div class="feature-grid">
+    <div class="feature-item">
+      <h3>直连方式</h3>
+      <p>直接输入域名即可，无需额外配置。多数情况下，移动端与桌面端体验一致。</p>
+    </div>
+    <div class="feature-item">
+      <h3>保持更新</h3>
+      <p>站点会定期调整，但核心地址相对稳定。偶尔遇到无法加载，稍后再试。</p>
+    </div>
+    <div class="feature-item">
+      <h3>轻量界面</h3>
+      <p>页面结构偏向简洁，信息层级清楚，适合快速操作，不拖沓。</p>
+    </div>
+  </div>
+
+  <!-- 场景式段落，带有温和叙述感 -->
+  <p style="margin-top: 0.2rem; font-size: 1rem; color: #4e473e;">
+    无论你是第一次接触，还是已经使用过一段时间，保持一个干净的访问习惯总是有益的。
+    比如，不要轻易相信搜索引擎中带有额外后缀的链接，尽量通过自己保存的书签或直接输入地址前往。
+    另外，如果你在移动设备上使用，注意屏幕旋转和缓存清理这些小细节，能减少不少小麻烦。
+  </p>
+
+  <!-- FAQ 摘要（两个常见问题，保持克制） -->
+  <div class="faq-mini">
+    <details>
+      <summary>偶尔打不开怎么办？</summary>
+      <p>先检查本地网络连接，或尝试更换一个网络环境（如切换Wi-Fi与移动数据）。有时短暂刷新即可恢复。</p>
+    </details>
+    <details>
+      <summary>是否需要注册或付费？</summary>
+      <p>访问页面本身不需要额外付费。部分功能或内容可能会要求登录，请根据页面实际情况操作。</p>
+    </details>
+  </div>
+
+  <!-- 温和结尾，再次自然出现链接 -->
+  <div class="closing">
+    最后，记住一个最直接的路径：<a href="https://mobile-jjbdianjing.com">竞技宝</a>，把它放在心里就好。
+    不需要记太多花哨的技巧，保持简单、保持耐心，大部分时候事情就会顺利。希望这份简明指南对你有用。
+  </div>
+
+  <!-- 饰底，无实质意义，只用来平衡视觉 -->
+  <hr>
+  <div class="small-meta">· 写于一个安静的下午 ·</div>
+
+</div>
+</body>
+</html>
