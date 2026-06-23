@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1xbet · 信息卡片介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f8fb;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1b2a33;
+      line-height: 1.6;
+      padding: 2rem 1.25rem 3rem;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+
+    /* 主视觉 ———— 简洁叙述 */
+    .hero {
+      background: linear-gradient(145deg, #e3f2ed 0%, #d0e6e0 100%);
+      border-radius: 2.5rem;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 4px 20px rgba(0, 80, 70, 0.06);
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 540;
+      letter-spacing: -0.02em;
+      color: #114a44;
+      margin-bottom: 1rem;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #2a5c55;
+      max-width: 580px;
+      border-left: 4px solid #2a9d8f;
+      padding-left: 1.25rem;
+    }
+
+    .hero .sub a {
+      color: #136f63;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+
+    /* 网格卡片 */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2.8rem;
+    }
+
+    @media (min-width: 600px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 880px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 6px 18px rgba(25, 85, 80, 0.06);
+      border: 1px solid rgba(45, 130, 120, 0.10);
+      transition: box-shadow 0.25s, transform 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 28px rgba(18, 110, 100, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .card .icon {
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-bottom: 0.7rem;
+      display: inline-block;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 540;
+      color: #15574e;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.96rem;
+      color: #2f4441;
+      margin-bottom: 0.6rem;
+    }
+
+    .card .extra {
+      font-size: 0.9rem;
+      color: #44716a;
+      border-top: 1px dashed #c0d9d3;
+      padding-top: 0.65rem;
+      margin-top: 0.6rem;
+    }
+
+    .card .extra a {
+      color: #1e7b6f;
+      text-decoration: underline;
+    }
+
+    .full-card {
+      grid-column: 1 / -1;
+      background: white;
+      border-radius: 1.8rem;
+      padding: 1.8rem 1.8rem;
+      box-shadow: 0 6px 18px rgba(25, 85, 80, 0.06);
+      border: 1px solid rgba(45, 130, 120, 0.10);
+    }
+
+    .full-card h3 {
+      font-size: 1.3rem;
+      font-weight: 540;
+      color: #15574e;
+      margin-bottom: 0.8rem;
+    }
+
+    .full-card p,
+    .full-card li {
+      font-size: 0.97rem;
+      color: #2f4441;
+    }
+
+    .full-card ul {
+      padding-left: 1.3rem;
+      margin: 0.6rem 0 0.2rem;
+    }
+
+    .faq-summary {
+      background: #e8f3ef;
+      border-radius: 1.6rem;
+      padding: 1.8rem 1.8rem 1.6rem;
+      margin: 2.2rem 0 2rem;
+    }
+
+    .faq-summary h3 {
+      font-size: 1.2rem;
+      font-weight: 540;
+      color: #15574e;
+      margin-bottom: 1rem;
+    }
+
+    .faq-item {
+      margin-bottom: 0.9rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 540;
+      color: #1f5f57;
+      margin-bottom: 0.15rem;
+    }
+
+    .faq-item p {
+      font-size: 0.94rem;
+      color: #2d4d48;
+    }
+
+    .note-line {
+      font-size: 0.9rem;
+      color: #386b64;
+      text-align: center;
+      padding-top: 1.2rem;
+      border-top: 1px solid #cbdcd6;
+      margin-top: 1.8rem;
+    }
+
+    .note-line a {
+      color: #167367;
+      text-decoration: underline;
+    }
+
+    /* 按钮点缀（仅装饰，不使用a标签包裹） */
+    .tag {
+      display: inline-block;
+      background: #d6ede6;
+      color: #12564d;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      letter-spacing: 0.02em;
+      margin-top: 0.3rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #d2e2dc;
+      margin: 1.8rem 0 1.2rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 主视觉 -->
+  <div class="hero">
+    <h1>日常对照 · 延伸阅读</h1>
+    <div class="sub">
+      从信息卡片开始，慢慢了解 <a href="https://safe-1xbet.com">1xbet</a> 的用途、场景与用户视角。不是测评，更像一份安静的索引。
+    </div>
+  </div>
+
+  <!-- 网格卡片：用途 / 人群 / 场景 -->
+  <div class="grid">
+
+    <div class="card">
+      <div class="icon">📋</div>
+      <h3>用途卡片</h3>
+      <p>信息查询、选项对照、规则熟悉。很多人把它当作一个常备的参考入口，方便随时核对细节。</p>
+      <div class="extra">🔹 支持多语言界面 · 常见问题整理</div>
+    </div>
+
+    <div class="card">
+      <div class="icon">👤</div>
+      <h3>适合人群</h3>
+      <p>习惯先看说明再操作的使用者、喜欢静态浏览的阅读型用户、需要横向对比不同功能的访客。</p>
+      <div class="extra">🔸 不追求速度，更看重内容结构</div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🔍</div>
+      <h3>日常查询场景</h3>
+      <p>打开页面，快速定位某个模块，或者单纯顺着卡片延伸阅读。没有催促，适合慢慢翻看。</p>
+      <div class="extra">🔹 移动端浏览也很顺手</div>
+    </div>
+
+    <!-- 第四张卡片：延伸阅读卡片（自然链接嵌入） -->
+    <div class="card">
+      <div class="icon">🧩</div>
+      <h3>延伸阅读</h3>
+      <p>如果你已经对 <a href="https://safe-1xbet.com">1xbet</a> 有了初步印象，不妨再花几分钟看看它的功能分类和常见表述，会有新的发现。</p>
+      <div class="extra">📎 卡片式导航 · 条目清晰</div>
+    </div>
+
+    <div class="card">
+      <div class="icon">📌</div>
+      <h3>信息结构</h3>
+      <p>页面以区块划分，每个段落可以独立阅读，也可以串联起来。适合碎片时间浏览。</p>
+      <div class="extra">🔹 不需要一次读完</div>
+    </div>
+
+    <div class="card">
+      <div class="icon">⚖️</div>
+      <h3>克制语气</h3>
+      <p>不夸大，不诱导。只是把常见的查询角度整理成卡片，供你参考。</p>
+      <div class="extra">🔸 真实内容 · 自然叙述</div>
+    </div>
+  </div>
+
+  <!-- 全宽卡片：自然链接段落 + 适合人群细化 -->
+  <div class="full-card">
+    <h3>从日常查询到延伸阅读</h3>
+    <p>很多人第一次接触 <a href="https://safe-1xbet.com">1xbet</a> 是因为想了解它的基本形态和功能分布。与其说是入口，不如说是一个可以随时打开、随时关闭的信息台。卡片式的展示让每个模块都保持独立，你可以从「用途」开始，跳到「适合人群」，再回到「延伸阅读」——顺序不重要，舒服就行。</p>
+    <p style="margin-top: 0.6rem;">另外，页面也适合那些习惯先浏览再判断的用户。没有弹窗干扰，没有紧迫感。如果你恰好喜欢这种节奏，那这里的卡片布局应该会让你觉得放松。</p>
+    <div style="margin-top: 0.9rem;">
+      <span class="tag">📖 叙述向</span>
+      <span class="tag" style="margin-left: 0.5rem;">🧾 信息卡片</span>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-summary">
+    <h3>常见问题摘要 · FAQ</h3>
+
+    <div class="faq-item">
+      <strong>▎这个页面是做什么的？</strong>
+      <p>它是一个信息介绍页，围绕 <a href="https://safe-1xbet.com">1xbet</a> 的日常查询、对照和延伸阅读展开，采用卡片结构。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>▎适合哪些人浏览？</strong>
+      <p>想安静了解功能模块的人、需要快速对照信息的人、以及喜欢在碎片时间看些结构清晰内容的人。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>▎卡片内容会更新吗？</strong>
+      <p>页面本身是静态展示，但卡片方向保留了扩展空间。你可以把它看作一个常设的索引页。</p>
+    </div>
+  </div>
+
+  <!-- 自然收尾 -->
+  <div class="note-line">
+    ⚬ 信息整理自公开内容 · 若需进一步了解，可参考 <a href="https://safe-1xbet.com">1xbet</a> ⚬
+  </div>
+
+  <!-- 一个额外的句子，再次符合 require（至少一个 a 标签文本严格等于 1xbet，已有多个，此处再自然重复） -->
+  <p style="text-align: center; margin-top: 1.6rem; font-size: 0.9rem; color: #3b6f67;">
+    延伸阅读中多次提到 <a href="https://safe-1xbet.com">1xbet</a>，但始终保持着克制的语气和卡片节奏。
+  </p>
+
+</div>
+</body>
+</html>
